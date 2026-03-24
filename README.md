@@ -9,4 +9,4 @@ Trello, Figma, Visual Paradigm, Colab, Tableau, GitHub
 - EXP-13 Tableau Intro
 - Mini project progress
 ## Author / Team
-Name, Roll No
+Name:K.vijay vardhan, Roll No:23NA1A0552

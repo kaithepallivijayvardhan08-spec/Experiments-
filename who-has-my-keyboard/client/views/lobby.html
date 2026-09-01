@@ -1,0 +1,32 @@
+<div class="screen home-screen">
+  <div class="home-card">
+    <h2 class="panel-title">SELECT GAME MODE</h2>
+
+    <div class="name-row">
+      <label>NAME</label>
+      <input type="text" ng-model="playerName" maxlength="12">
+    </div>
+
+    <div class="menu-buttons">
+      <button class="btn btn-play" ng-click="quickMatch()">⚡ QUICK MATCH</button>
+      <button class="btn btn-ghost" ng-click="createRoom()">🏠 CREATE ROOM</button>
+    </div>
+
+    <div class="join-row">
+      <input type="text" ng-model="joinCode" maxlength="5" placeholder="ROOM CODE" class="code-input">
+      <button class="btn btn-small" ng-click="joinRoom()">JOIN ROOM</button>
+    </div>
+
+    <p class="error" ng-if="error">{{ error }}</p>
+
+    <div class="room-list" ng-if="rooms.length">
+      <h3>OPEN ROOMS</h3>
+      <div class="room-row" ng-repeat="room in rooms" ng-click="joinRoom(room.roomId)">
+        <span class="room-code">{{ room.roomId }}</span>
+        <span>{{ room.map }}</span>
+        <span>{{ room.players }}/{{ room.maxPlayers }}</span>
+        <span class="room-state">{{ room.state }}</span>
+      </div>
+    </div>
+  </div>
+</div>

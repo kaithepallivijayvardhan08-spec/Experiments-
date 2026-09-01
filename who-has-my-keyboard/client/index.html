@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="keyboardGame">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>WHO HAS MY KEYBOARD?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lobby.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/controller.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div ng-view></div>
+  </div>
+
+  <script src="/vendor/angular/angular.min.js"></script>
+  <script src="/vendor/angular-route/angular-route.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/services/socketService.js"></script>
+  <script src="js/services/gameService.js"></script>
+  <script src="js/services/authService.js"></script>
+  <script src="js/services/apiService.js"></script>
+
+  <script src="js/game/gameState.js"></script>
+  <script src="js/game/sprites.js"></script>
+  <script src="js/game/inputManager.js"></script>
+  <script src="js/game/collision.js"></script>
+  <script src="js/game/entities/player.js"></script>
+  <script src="js/game/entities/duck.js"></script>
+  <script src="js/game/entities/powerUp.js"></script>
+  <script src="js/game/maps/mapRenderer.js"></script>
+  <script src="js/game/animations.js"></script>
+  <script src="js/game/hud.js"></script>
+  <script src="js/game/gameEngine.js"></script>
+
+  <script src="js/directives/holdButton.js"></script>
+
+  <script src="js/controllers/homeController.js"></script>
+  <script src="js/controllers/authController.js"></script>
+  <script src="js/controllers/lobbyController.js"></script>
+  <script src="js/controllers/roomController.js"></script>
+  <script src="js/controllers/gameController.js"></script>
+  <script src="js/controllers/controllerController.js"></script>
+  <script src="js/controllers/resultController.js"></script>
+  <script src="js/controllers/leaderboardController.js"></script>
+</body>
+</html>

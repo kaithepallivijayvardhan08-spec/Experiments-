@@ -1,0 +1,151 @@
+.join-row {
+  display: flex;
+  gap: 10px;
+  max-width: 460px;
+  margin: 16px auto 0;
+}
+
+.code-input {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.room-list {
+  margin-top: 26px;
+}
+
+.room-list h3 {
+  color: var(--blue);
+  letter-spacing: 1px;
+}
+
+.room-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 60px 90px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  background: #221a34;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.room-row:hover {
+  border-color: var(--yellow);
+}
+
+.room-code {
+  font-family: 'Luckiest Guy', cursive;
+  color: var(--yellow);
+  letter-spacing: 3px;
+}
+
+.room-code.big {
+  font-size: 34px;
+}
+
+.room-state {
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.player-slot {
+  position: relative;
+  border: 5px solid #4a3a63;
+  border-radius: 18px;
+  background: #201936;
+  padding: 18px 14px 14px;
+  min-height: 108px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.player-slot.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.slot-index {
+  position: absolute;
+  top: -14px;
+  left: 12px;
+  font-family: 'Luckiest Guy', cursive;
+  color: #1b1420;
+  border: 4px solid var(--ink);
+  border-radius: 10px;
+  padding: 1px 8px;
+}
+
+.slot-name {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.slot-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tag.ready {
+  background: var(--green);
+  color: var(--ink);
+}
+
+.countdown-strip {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 28px;
+  color: var(--yellow);
+  letter-spacing: 3px;
+  margin: 10px 0;
+}
+
+.controller-link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.controller-link label {
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.controller-link input {
+  flex: 1;
+  min-width: 240px;
+  font-size: 13px;
+  font-weight: 600;
+}

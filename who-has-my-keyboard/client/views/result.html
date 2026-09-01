@@ -1,0 +1,25 @@
+<div class="screen home-screen">
+  <div class="home-card">
+    <h2 class="panel-title win-title">🏆 {{ winner.name || 'NOBODY' }} WINS!</h2>
+    <p class="subtitle">{{ winner ? 'Escaped through the exit with the Golden Duck 🐤' : 'Time ran out — the duck stays put.' }}</p>
+
+    <table class="score-table">
+      <tr>
+        <th>#</th><th>PLAYER</th><th>DUCK PICKUPS</th><th>POWERS USED</th><th>KEYS STOLEN</th><th>XP</th>
+      </tr>
+      <tr ng-repeat="player in players" ng-style="{'color': player.color}">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ player.name }}</td>
+        <td>{{ player.stats.duckPickups }}</td>
+        <td>{{ player.stats.powersUsed }}</td>
+        <td>{{ player.stats.keysStolen }}</td>
+        <td>{{ player.playerId === winner.playerId ? 100 : 25 }}</td>
+      </tr>
+    </table>
+
+    <div class="menu-buttons">
+      <button class="btn btn-play" ng-click="playAgain()">🔁 PLAY AGAIN</button>
+      <button class="btn btn-ghost" ng-click="toLobby()">🏠 BACK TO LOBBY</button>
+    </div>
+  </div>
+</div>

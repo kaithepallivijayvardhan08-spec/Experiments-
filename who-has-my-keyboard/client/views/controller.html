@@ -1,0 +1,37 @@
+<div class="controller-screen">
+  <div class="ctrl-join" ng-if="!connected">
+    <h2>📱 PHONE CONTROLLER</h2>
+    <label>ROOM CODE</label>
+    <input type="text" ng-model="roomId" maxlength="5" placeholder="ABCDE">
+    <label>PLAYER ID</label>
+    <input type="text" ng-model="playerId" placeholder="paste from the PC screen">
+    <button class="btn btn-play" ng-click="join()">CONNECT</button>
+    <p class="error" ng-if="error">{{ error }}</p>
+  </div>
+
+  <div class="ctrl-pad" ng-if="connected">
+    <div class="ctrl-head">
+      <span class="ctrl-name">{{ player.name }}</span>
+      <span class="ctrl-room">ROOM {{ roomId }}</span>
+      <span class="ctrl-duck" ng-if="hasDuck">🐤 YOU HAVE THE DUCK</span>
+    </div>
+
+    <div class="dpad">
+      <button class="dkey w" ng-class="keyState.W.status" whmk-hold="W">W</button>
+      <button class="dkey a" ng-class="keyState.A.status" whmk-hold="A">A</button>
+      <button class="dkey s" ng-class="keyState.S.status" whmk-hold="S">S</button>
+      <button class="dkey d" ng-class="keyState.D.status" whmk-hold="D">D</button>
+    </div>
+
+    <button class="grab-btn" whmk-hold="SPACE">GRAB / DROP 🐤</button>
+
+    <div class="ctrl-powers">
+      <button class="ctrl-power" ng-repeat="power in inventory track by $index"
+              ng-style="{'background': powerMeta[power].color}"
+              ng-click="usePower($index)">
+        {{ powerMeta[power].label }}
+      </button>
+      <div class="ctrl-power empty" ng-if="!inventory.length">NO POWERS — GRAB ONE IN THE ARENA</div>
+    </div>
+  </div>
+</div>

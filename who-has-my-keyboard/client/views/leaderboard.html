@@ -1,0 +1,19 @@
+<div class="screen home-screen">
+  <div class="home-card">
+    <h2 class="panel-title">🏆 LEADERBOARD</h2>
+    <table class="score-table">
+      <tr><th>#</th><th>PLAYER</th><th>WINS</th><th>MATCHES</th><th>XP</th></tr>
+      <tr ng-repeat="row in rows">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ row.username }}</td>
+        <td>{{ row.wins }}</td>
+        <td>{{ row.matches }}</td>
+        <td>{{ row.xp }}</td>
+      </tr>
+      <tr ng-if="!rows.length"><td colspan="5">No matches played yet.</td></tr>
+    </table>
+    <div class="menu-buttons">
+      <button class="btn btn-ghost" ng-click="back()">BACK</button>
+    </div>
+  </div>
+</div>

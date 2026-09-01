@@ -1,0 +1,21 @@
+<div class="screen home-screen">
+  <div class="home-card narrow">
+    <h2 class="panel-title">{{ mode === 'register' ? 'CREATE ACCOUNT' : 'LOGIN' }}</h2>
+    <div class="name-row">
+      <label>USERNAME</label>
+      <input type="text" ng-model="form.username" maxlength="16">
+    </div>
+    <div class="name-row">
+      <label>PASSWORD</label>
+      <input type="password" ng-model="form.password">
+    </div>
+    <p class="error" ng-if="error">{{ error }}</p>
+    <div class="menu-buttons">
+      <button class="btn btn-play" ng-click="submit()">{{ mode === 'register' ? 'REGISTER' : 'LOGIN' }}</button>
+      <button class="btn btn-ghost" ng-click="switchMode(mode === 'register' ? 'login' : 'register')">
+        {{ mode === 'register' ? 'I ALREADY HAVE AN ACCOUNT' : 'CREATE AN ACCOUNT' }}
+      </button>
+      <button class="btn btn-ghost" ng-click="continueAsGuest()">PLAY AS GUEST</button>
+    </div>
+  </div>
+</div>

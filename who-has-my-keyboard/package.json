@@ -1,0 +1,30 @@
+{
+  "name": "who-has-my-keyboard",
+  "version": "1.0.0",
+  "description": "WHO HAS MY KEYBOARD? - a chaotic real-time multiplayer browser game where players steal, lock and swap each other's controls while fighting over the Golden Duck.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "lint": "eslint .",
+    "smoke": "node scripts/smokeTest.js"
+  },
+  "keywords": [
+    "game",
+    "multiplayer",
+    "socket.io",
+    "angularjs",
+    "canvas"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-route": "^1.8.3",
+    "express": "4.21.2",
+    "socket.io": "4.8.1"
+  },
+  "devDependencies": {
+    "eslint": "8.57.1",
+    "socket.io-client": "^4.8.1"
+  }
+}

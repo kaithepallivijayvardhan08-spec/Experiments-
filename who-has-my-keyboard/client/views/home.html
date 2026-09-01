@@ -1,0 +1,37 @@
+<div class="screen home-screen">
+  <div class="home-card">
+    <div class="logo">
+      <span class="logo-line-1">WHO HAS MY</span>
+      <span class="logo-line-2">KEYBOARD?</span>
+      <span class="tagline">"You control your character… until someone steals your controls."</span>
+    </div>
+
+    <div class="name-row">
+      <label>YOUR NAME</label>
+      <input type="text" ng-model="playerName" maxlength="12" placeholder="PLAYER">
+    </div>
+
+    <div class="menu-buttons">
+      <button class="btn btn-play" ng-click="play()">🎮 PLAY</button>
+      <button class="btn btn-ghost" ng-click="showHowTo = !showHowTo">❓ HOW TO PLAY</button>
+      <button class="btn btn-ghost" ng-click="goto('/leaderboard')">🏆 LEADERBOARD</button>
+      <button class="btn btn-ghost" ng-click="goto('/login')">👤 LOGIN / REGISTER</button>
+    </div>
+
+    <div class="howto" ng-if="showHowTo">
+      <h3>OBJECTIVE</h3>
+      <p>FIND THE GOLDEN DUCK 🐤 → PICK IT UP (SPACE) → SURVIVE → REACH THE EXIT 🚦 → WIN 🏆</p>
+      <h3>CONTROLS</h3>
+      <p><b>W A S D</b> move · <b>SPACE</b> grab the duck · <b>1 2 3</b> use a power · <b>TAB</b> scoreboard</p>
+      <h3>POWERS</h3>
+      <ul>
+        <li>🖐️ <b>STEAL KEY</b> — a giant hand rips a key off their keyboard</li>
+        <li>🔄 <b>SWAP KEYS</b> — your keyboard flies over to them and theirs to you</li>
+        <li>🧠 <b>MIND CONTROL</b> — you drive their character for 5 seconds</li>
+        <li>🕺 <b>DANCE CURSE</b> — they dance instead of running and drop the duck</li>
+        <li>🔒 <b>LOCK KEY</b> — a giant lock drops on their W for 9 seconds</li>
+        <li>⚡ <b>SPEED BOOST</b> — run away with the duck</li>
+      </ul>
+    </div>
+  </div>
+</div>

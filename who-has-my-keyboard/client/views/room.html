@@ -1,0 +1,37 @@
+<div class="screen home-screen">
+  <div class="home-card wide">
+    <h2 class="panel-title">ROOM <span class="room-code big">{{ roomId }}</span></h2>
+    <p class="subtitle">Share this code — or open the phone controller link below.</p>
+
+    <div class="player-grid">
+      <div class="player-slot" ng-repeat="player in players" ng-style="{'border-color': player.color}">
+        <div class="slot-index" ng-style="{'background': player.color}">P{{ $index + 1 }}</div>
+        <div class="slot-name">{{ player.name }}</div>
+        <div class="slot-tags">
+          <span class="tag" ng-if="player.isBot">BOT</span>
+          <span class="tag" ng-if="player.hasController">📱 PHONE</span>
+          <span class="tag ready" ng-if="player.ready">READY</span>
+          <span class="tag" ng-if="!player.ready && !player.isBot">WAITING</span>
+        </div>
+      </div>
+      <div class="player-slot empty" ng-repeat="slot in emptySlots track by $index">EMPTY</div>
+    </div>
+
+    <div class="countdown-strip" ng-if="state === 'countdown'">STARTING IN {{ countdown }}…</div>
+
+    <div class="menu-buttons">
+      <button class="btn btn-play" ng-click="toggleReady()">{{ me.ready ? 'NOT READY' : 'I AM READY' }}</button>
+      <button class="btn btn-ghost" ng-click="start()" ng-if="isHost">START MATCH</button>
+      <button class="btn btn-ghost" ng-click="startWithBots()">FILL WITH BOTS &amp; START</button>
+      <button class="btn btn-ghost" ng-click="leave()">LEAVE</button>
+    </div>
+
+    <div class="controller-link">
+      <label>📱 PHONE CONTROLLER</label>
+      <input type="text" readonly ng-value="controllerUrl">
+      <button class="btn btn-small" ng-click="copyControllerUrl()">{{ copied ? 'COPIED' : 'COPY' }}</button>
+    </div>
+
+    <p class="error" ng-if="error">{{ error }}</p>
+  </div>
+</div>
